@@ -2,8 +2,7 @@
 
 namespace App\Services;
 
-class AuthService extends Service
+class Service
 {
     //
 }
-    

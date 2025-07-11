@@ -22,6 +22,18 @@ class Log extends Model
     public function enrollment() {
         return $this->belongsTo(Enrollment::class);
     }
+
+    /**
+     * @param string $operation
+     * @param int $user_id
+     * @param int|null $course_id
+     * @param int|null $lesson_id
+     * @param int|null $enrollment_id
+     *
+     * Registers a log for every operation made in the application
+     *
+     * @return void
+     */
     public static function register(
         string $operation,
         int $user_id,
