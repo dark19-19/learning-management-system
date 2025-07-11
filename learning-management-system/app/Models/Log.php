@@ -22,4 +22,19 @@ class Log extends Model
     public function enrollment() {
         return $this->belongsTo(Enrollment::class);
     }
+    public static function register(
+        string $operation,
+        int $user_id,
+        int $course_id = null,
+        int $lesson_id = null,
+        int $enrollment_id = null
+    ): void {
+        Log::create([
+            'operation' => $operation,
+            'user_id' => $user_id,
+            'course_id' => $course_id,
+            'lesson_id' => $lesson_id,
+            'enrollment_id' => $enrollment_id
+        ]);
+    }
 }
